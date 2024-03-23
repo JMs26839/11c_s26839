@@ -30,3 +30,13 @@ print(sq.square_gen_method(1,10))
 list_math_lib=[math.sqrt(x)for x in squares_list]
 print(list_math_lib)
 
+#task_5 exception handling
+try:
+    sq2= SquareGenerator()
+    sq2.square_gen_method(10,1)
+    print(sq2.square_gen_method())
+
+except Exception as e:
+    print("EndSmallerThanStartEXC",e)
+
+
