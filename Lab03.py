@@ -23,3 +23,10 @@ class SquareGenerator():
 sq= SquareGenerator()
 
 print(sq.square_gen_method(1,10))
+
+
+
+#task_4
+list_math_lib=[math.sqrt(x)for x in squares_list]
+print(list_math_lib)
+
