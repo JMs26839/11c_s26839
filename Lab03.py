@@ -9,3 +9,17 @@ def square_list_from_range(start, end):
     return list
 #task2 test
 print(square_list_from_range(1,10))
+
+
+#task_3
+
+class SquareGenerator():
+
+    @staticmethod
+    def square_gen_method(start, end):
+        list_of_squares = [x ** 2 for x in range(start, end)]
+        return list_of_squares
+#testing
+sq= SquareGenerator()
+
+print(sq.square_gen_method(1,10))
