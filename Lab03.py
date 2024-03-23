@@ -72,3 +72,19 @@ class task9(CubicGenerator):
 ts9= task9()
 print(ts9.cubed_gen_method(1,10))
 
+#task10
+from abc import ABC, abstractmethod
+class SquareGenerator(ABC):
+    @abstractmethod
+    def square_gen_method(self, start, end):
+        abst_squares=[x ** 2 for x in range(start, end)]
+        return abst_squares
+
+class CubicGenerator(SquareGenerator):
+    def square_gen_method(self, start, end):
+        abs_cubes=[x ** 2 for x in range(start, end)]
+        return abs_cubes
+        
+
+ts10= CubicGenerator()
+print(ts10.square_gen_method(1,100))
