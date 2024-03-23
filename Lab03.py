@@ -30,20 +30,31 @@ print(sq.square_gen_method(1,10))
 list_math_lib=[math.sqrt(x)for x in squares_list]
 print(list_math_lib)
 
-#task_5 exception handling
-try:
-    sq2= SquareGenerator()
-    sq2.square_gen_method(10,1)
-    print(sq2.square_gen_method())
-
-except Exception as e:
-    print("EndSmallerThanStartEXC",e)
+# #task_5 exception handling
+# try:
+#     sq2= SquareGenerator()
+#     sq2.square_gen_method(10,1)
+#     print(sq2.square_gen_method())
+#
+# except Exception as e:
+#     print("EndSmallerThanStartEXC",e)
 
 
 #task_6
 from square_generator import SquareGenerator
 sq3= SquareGenerator()
 
-#task7
-from Package_task_7.square_generator_packaged import SquareGenerator
-sq4= SquareGenerator()
+# #task7
+# from Package_task_7.square_generator_packaged import SquareGenerator
+# sq4= SquareGenerator(1,5)
+
+#task8
+class CubicGenerator(SquareGenerator):
+
+    def cubed_gen_method(self, start, end):
+        list_of_cubes = [x ** 3 for x in range(start, end)]
+        return list_of_cubes
+
+cg= CubicGenerator()
+
+print(cg.cubed_gen_method(1,10))
