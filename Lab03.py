@@ -40,3 +40,6 @@ except Exception as e:
     print("EndSmallerThanStartEXC",e)
 
 
+#task_6
+from square_generator import SquareGenerator
+sq3= SquareGenerator()
