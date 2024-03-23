@@ -58,3 +58,17 @@ class CubicGenerator(SquareGenerator):
 cg= CubicGenerator()
 
 print(cg.cubed_gen_method(1,10))
+
+#task9
+class task9(CubicGenerator):
+    def cubed_gen_method(self, start, end):
+        if start >= end:
+            raise ValueError("start must be less than end")
+        generate_list_of_squares=[x ** 2 for x in range(start, end)]
+
+
+        return generate_list_of_squares
+
+ts9= task9()
+print(ts9.cubed_gen_method(1,10))
+
