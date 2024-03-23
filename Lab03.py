@@ -43,3 +43,7 @@ except Exception as e:
 #task_6
 from square_generator import SquareGenerator
 sq3= SquareGenerator()
+
+#task7
+from Package_task_7.square_generator_packaged import SquareGenerator
+sq4= SquareGenerator()
