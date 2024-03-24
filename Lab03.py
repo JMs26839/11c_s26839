@@ -30,61 +30,64 @@ print(sq.square_gen_method(1,10))
 list_math_lib=[math.sqrt(x)for x in squares_list]
 print(list_math_lib)
 
-# #task_5 exception handling
-# try:
-#     sq2= SquareGenerator()
-#     sq2.square_gen_method(10,1)
-#     print(sq2.square_gen_method())
-#
-# except Exception as e:
-#     print("EndSmallerThanStartEXC",e)
+#task_5 exception handling
+try:
+    sq2= SquareGenerator()
+    sq2.square_gen_method(10,1)
+    print(sq2.square_gen_method())
+
+except Exception as e:
+    print("EndSmallerThanStartEXC",e)
 
 
 #task_6
 from square_generator import SquareGenerator
 sq3= SquareGenerator()
 
-# #task7
-# from Package_task_7.square_generator_packaged import SquareGenerator
-# sq4= SquareGenerator(1,5)
-
+#task7
+from Package_task_7.square_generator_packaged import SquareGenerator
+sq4= SquareGenerator(1,5)
+print("====================")
 #task8
 class CubicGenerator(SquareGenerator):
+    def __init__(self, start, end):
+        super().__init__(start, end)
 
     def cubed_gen_method(self, start, end):
         list_of_cubes = [x ** 3 for x in range(start, end)]
         return list_of_cubes
 
-cg= CubicGenerator()
+
+cg= CubicGenerator(1,10)
 
 print(cg.cubed_gen_method(1,10))
-
+print("====================")
 #task9
 class task9(CubicGenerator):
     def cubed_gen_method(self, start, end):
-        if start >= end:
+        if start > end:
             raise ValueError("start must be less than end")
         generate_list_of_squares=[x ** 2 for x in range(start, end)]
 
 
         return generate_list_of_squares
 
-ts9= task9()
+ts9= task9(1,10)
 print(ts9.cubed_gen_method(1,10))
 
 #task10
 from abc import ABC, abstractmethod
+
 class SquareGenerator(ABC):
     @abstractmethod
     def square_gen_method(self, start, end):
-        abst_squares=[x ** 2 for x in range(start, end)]
+        abst_squares = [x ** 2 for x in range(start, end)]
         return abst_squares
 
 class CubicGenerator(SquareGenerator):
-    def square_gen_method(self, start, end):
-        abs_cubes=[x ** 2 for x in range(start, end)]
+    def square_gen_method(self, start, end):  # Correcting the method name
+        abs_cubes = [x ** 3 for x in range(start, end)]  # Generating cubes instead of squares
         return abs_cubes
-        
 
-ts10= CubicGenerator()
-print(ts10.square_gen_method(1,100))
+ts10 = CubicGenerator()
+print(ts10.square_gen_method(1, 100))
